@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/serif.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--r-main-font-size: 1.7em;
+		}
+
+		mark {
+			background-color: darkkhaki;
+			color: #000;
+		}
+
+		.slide-container {
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+		}
+
+		.text-column {
+			flex: 1;
+			padding: 40px;
+		}
+
+		.content {
+			font-size: 0.8em;
+			text-align: left;
+		}
+
+		.image-column {
+			flex: 3;
+			position: relative;
+			background-size: cover;
+		}
+
+		.subtle-background {
+			filter: contrast(0.6) brightness(1.2);
+			backdrop-filter: blur(12px);
+		}
+
+		.quote-box {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 80%;
+			height: 60%;
+			background-color: rgba(255, 255, 250, 0.95);
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			font-size: 0.6em;
+			transition: all 0.8s ease-out;
+		}
+
+		.quote-content {
+			font-size: 0.9em;
+			text-align: left;
+			font-family: 'Source Code Pro', Consolas, monospace;
+			letter-spacing: -0.02em;
+			line-height: 1.5;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-rendering: optimizeLegibility;
+			color: #1a1a1a;
+			font-weight: 500;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-markdown="slides/prompting.md">
+				<textarea data-template>
+				<style>
+					.katex {
+						font-size: 1.0em !important;
+					}		
+					img {
+						width: 800px;
+						height: auto;
+					}
+					.reveal .slides {
+						justify-content: center;
+						align-items: center;
+						height: 100%;
+					}
+
+					.reveal .slides section {
+						justify-content: center;
+						align-items: center;
+					}
+				</style>
+				</textarea>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			highlight: {
+				highlightOnLoad: false
+			},
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX],
+			dependencies: [
+				{ src: 'plugin/typed/typed.js', async: false, callback: function () { callTypedJs(); } }
+			]
+		});
+		Reveal.configure({
+			pdfSeparateFragments: false
+		})
+	</script>
+</body>
+
+</html>
